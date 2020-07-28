@@ -1,3 +1,24 @@
+jpnevulator (2.3.6-1) unstable; urgency=low
+
+  * New upstream release.
+  * Upgrade to more recent debhelper version.
+  * Start signing the source package.
+  * Update copyright file according to current machine readable rules.
+  * Add upstream/metadata information.
+  * Make rules more dh compliant.
+  * Remove no longer needed compat file.
+  * Add Dockerfile and README to easily create the package.
+
+ -- Freddy Spierenburg <freddy@snarl.nl>  Tue, 28 Jul 2020 13:44:45 +0200
+
+jpnevulator (2.3.5-1) unstable; urgency=low
+
+  * New upstream release.
+  * (Helmut Grohne) Fix FTCBFS: Let dh_auto_build pass cross tools to
+    make. (Closes: #958136)
+
+ -- Freddy Spierenburg <freddy@snarl.nl>  Fri, 08 May 2020 22:20:40 +0200
+
 jpnevulator (2.3.4-1) unstable; urgency=low
 
   * New upstream release.
@@ -123,4 +144,3 @@ jpnevulator (1.1.0-1) unstable; urgency=low
   * Initial release.
 
  -- Freddy Spierenburg <freddy@snarl.nl>  Sat,  3 Jun 2006 15:34:17 +0200
-
