@@ -1,7 +1,7 @@
 jpnevulator (2.3.6-1) unstable; urgency=low
 
   * New upstream release.
-  * Upgrade to more recent debhelper version.
+  * Upgrade to more recent debhelper version. (Closes: #965609)
   * Start signing the source package.
   * Update copyright file according to current machine readable rules.
   * Add upstream/metadata information.
