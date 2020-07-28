@@ -9,18 +9,9 @@
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
 
-
-
-
-CFLAGS:=$(shell dpkg-buildflags --get CFLAGS) -Wall
-CPPFLAGS:=$(shell dpkg-buildflags --get CPPFLAGS)
-LDFLAGS:=$(shell dpkg-buildflags --get LDFLAGS)
-
-ifneq (,$(findstring noopt,$(DEB_BUILD_OPTIONS)))
-	CFLAGS += -O0
-else
-	CFLAGS += -O2
-endif
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+DPKG_EXPORT_BUILDFLAGS = 1
+include /usr/share/dpkg/buildflags.mk
 
 configure: configure-stamp
 configure-stamp:
@@ -34,11 +25,11 @@ build: build-arch build-indep
 build-arch: build-stamp
 build-indep: build-stamp
 
-build-stamp: configure-stamp 
+build-stamp: configure-stamp
 	dh_testdir
 
 	# Add here commands to compile the package.
-	$(MAKE) CFLAGS="$(CFLAGS)" CPPFLAGS="$(CPPFLAGS)" LDFLAGS="$(LDFLAGS)"
+	dh_auto_build -- CFLAGS="$(CFLAGS)" CPPFLAGS="$(CPPFLAGS)" LDFLAGS="$(LDFLAGS)"
 	#docbook-to-man debian/jpnevulator.sgml > jpnevulator.1
 
 	touch $@
@@ -49,18 +40,18 @@ clean:
 	rm -f build-stamp configure-stamp
 
 	# Add here commands to clean up after the build process.
-	$(MAKE) clean
+	${MAKE} clean
 
-	dh_clean 
+	dh_clean
 
 install: build
 	dh_testdir
 	dh_testroot
-	dh_prep 
+	dh_prep
 	dh_installdirs
 
 	# Add here commands to install the package into debian/jpnevulator.
-	$(MAKE) install DESTDIR=$(CURDIR)/debian/jpnevulator
+	dh_auto_build -- install DESTDIR=$(CURDIR)/debian/jpnevulator
 
 
 # Build architecture-independent files here.
