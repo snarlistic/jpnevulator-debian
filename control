@@ -3,8 +3,8 @@ Homepage: http://jpnevulator.snarl.nl/
 Section: comm
 Priority: optional
 Maintainer: Freddy Spierenburg <freddy@snarl.nl>
-Build-Depends: debhelper (>= 5)
-Standards-Version: 3.9.8
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.3.0
 
 Package: jpnevulator
 Architecture: any
