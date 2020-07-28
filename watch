@@ -1,2 +1,2 @@
-version=3
-http://jpnevulator.snarl.nl/download/jpnevulator-(.+).tgz
+version=4
+opts=pgpsigurlmangle=s/$/.sig/ https://jpnevulator.snarl.nl/download/jpnevulator-(.+)\.tgz
