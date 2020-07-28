@@ -1,0 +1,15 @@
+README
+======
+
+Nice repository to create a Debian package out of jpnevulator
+(https://jpnevulator.snarl.nl). The accompanied Dockerfile comes from
+https://salsa.debian.org/docker-team/docker/-/blob/master/debian/Dockerfile and
+is a handy means to create the package:
+
+	$ docker build --tag jpnevulator .
+	$ docker run -ti jpnevulator
+
+Once inside the Docker container use the shell history to run the previous command.
+This will create the Debian package.
+
+Freddy Spierenburg <freddy@snarl.nl>
